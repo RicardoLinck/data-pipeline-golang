@@ -18,7 +18,7 @@ func saveData(ic <-chan externalData) <-chan saveResult {
 				batch = append(batch, input.inputData.id)
 			} else {
 				oc <- persistBatch(batch)
-				batch = make([]string, 0)
+				batch = []string{input.inputData.id}
 			}
 		}
 
